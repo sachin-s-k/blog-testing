@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const posts = {};
-
+console.log('started........');
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
@@ -40,8 +40,11 @@ app.post("/events", (req, res) => {
 
   res.send({});
 });
-console.log('new strated after infraaa');
+
 app.listen(4000, () => {
   console.log('new version to check updation method-2:0.2');
   console.log("Listening on 4000");
 });
+
+
+console.log('new started at 3');
