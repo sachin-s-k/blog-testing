@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const posts = {};
-
+console.log('started........');
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
