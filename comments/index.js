@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const commentsByPostId = {};
-console.log('comments loged....');
+console.log('comments loged....cbcbbcbcbzc');
 app.get("/posts/:id/comments", (req, res) => {
   res.send(commentsByPostId[req.params.id] || []);
 });
