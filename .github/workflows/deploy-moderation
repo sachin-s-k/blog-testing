@@ -1,0 +1,20 @@
+name: deploy-moderation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'moderation/**'
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd moderation && docker build -t johnsachin/moderation .
+      - run: docker login -u $DOCKER_USER_NAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USER_NAME: ${{ secrets.DOCKER_USER_NAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push johnsachin/moderation
