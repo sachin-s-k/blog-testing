@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd infra && npm install && npm run 
+      - run: cd posts && npm install && npm run 
